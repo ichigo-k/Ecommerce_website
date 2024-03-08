@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 :root{
-  @apply lg:mx-[16rem] mx-[1rem]
+  @apply lg:mx-[15rem] mx-[1rem]
 }
