@@ -3,5 +3,18 @@
 @tailwind utilities;
 
 :root{
-  @apply lg:mx-[15rem] mx-[1rem]
+  @apply lg:mx-[17rem] mx-[1rem] bg-[#f8f9fa]
+}
+
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+      display: none;
+  }
+ /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+}
 }

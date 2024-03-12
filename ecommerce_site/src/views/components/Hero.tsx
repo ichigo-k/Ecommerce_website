@@ -13,17 +13,15 @@ export default function Hero() {
             })
             .catch((error) => {
                 console.error('Error fetching data:', error);
-                setLoading(false);
+                setLoading(true);
             });
     }, []);
 
     if (loading) {
         return (
             <div className="relative h-[20rem]">
-                <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black/60 p-4">
-                    <div className="w-1/2">
-                        <h1 className="text-3xl text-white font-bold">Loading...</h1>
-                    </div>
+                <div className="absolute top-0 left-0 w-full md:h-[20rem] h-[13rem] flex items-center justify-center bg-black/60 p-4 animate-pulse">
+                   
                 </div>
             </div>
         );
@@ -37,7 +35,7 @@ export default function Hero() {
 
                 <div className="w-1/2">
                     <h1 className="text-3xl text-white font-bold max-md:text-xl">{product.title}</h1>
-                    <p className="text-white max-md:text-sm">{product.description}</p>
+                    <p className="text-white max-md:text-sm text-lg">{product.description}</p>
                     <button className="bg-white text-black px-3 py-1 rounded-md mt-3">Buy Now</button>
                 </div>
                 <div className="w-1/2">
