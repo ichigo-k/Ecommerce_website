@@ -5,7 +5,7 @@ export default function ProductDisplay({ products }: any) {
     return (
         <>
             {products.map((product) => (
-                <div key={product.id} className="w-full flex h-[15rem] max-md:h-[10rem]  mb-2 mt-2 rounded-md shadow-lg relative bg-white ">
+                <div key={product.id} className="w-full flex h-[15rem] max-md:h-[10rem]  mb-2 mt-2 rounded-md shadow-lg relative bg-white border-b">
                     
                     <img src={product.thumbnail} alt="" className="w-1/3 h-[15rem] max-md:h-[10rem] object-cover" />
 

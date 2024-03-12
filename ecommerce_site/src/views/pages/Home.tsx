@@ -1,5 +1,6 @@
 import Hero from "../components/Hero";
 import CatDisplay from "../components/CatDisplay";
+import HighlightedProducts from "../components/HighlightedProducts";
 
 export default function Home() {
 
@@ -7,9 +8,10 @@ export default function Home() {
     <div className='mt-5'>
         <div>
             <Hero />
-            <div className="">
-                <CatDisplay/>
-            </div>
+          
+            <CatDisplay/>
+
+            <HighlightedProducts />
            
         </div>
     </div>

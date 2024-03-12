@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root{
-  @apply lg:mx-[17rem] mx-[1rem] bg-[#f8f9fa]
+  @apply lg:mx-[2rem] mx-[1rem] xl:mx-[5rem] bg-[#f8f9fa]
 }
 
 

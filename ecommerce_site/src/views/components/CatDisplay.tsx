@@ -23,7 +23,7 @@ export default function CatDisplay() {
             loading ?
              <div>Loading...</div> 
             :
-                <ul className="flex max-lg:overflow-x-scroll lg:flex-wrap justify-between w-full gap-2 whitespace-nowrap p-3 text-xs no-scrollbar ">
+                <ul className="flex max-lg:overflow-x-scroll lg:flex-wrap w-full gap-2 whitespace-nowrap p-3 text-xs no-scrollbar ">
                     {categories.map((category) => (
                         <li key={category} className="bg-gray-500 text-white font-semibold p-2 rounded-full"><a href={"/category/"+ category}>{category}</a></li>
                     ))}
