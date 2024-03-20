@@ -1,38 +1,46 @@
-import React,{useEffect,useState} from 'react'
-import { useParams } from 'react-router-dom'
-import getData from '../../Functions/getData'
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import getData from '../../Functions/getData';
+import ProductDetails from '../components/ProductDetails';
 
 export default function Product() {
+  const { id } = useParams();
 
-    const {id} = useParams()
+  const [product, setProduct] = useState({
+        title: "",
+        category: "",
+        brand: "",
+        thumbnail: "",
+        price: 0,
+        discountPercentage: 0,
+        stock: 0,
+        description: "",
+        images: [],
+        id: 0
+  });
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-    const [product, setProduct] = useState(null);
-    const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    getData({ url: `products/${id}` })
+      .then((data) => {
+        setProduct(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error fetching product data:', error);
+        setError(error);
+        setLoading(false);
+      });
+  }, [id]); 
 
-    useEffect(() => {
-        getData({ url: "products/" + id  })
-            .then((data) => {
-                setProduct(data);
-                setLoading(false);
-            })
-            .catch((error) => {
-                console.error('Error fetching data:', error);
-                setLoading(false);
-            });
-    }, []);
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
+  if (error) {
+    return <p>Error loading product. Please try again later.</p>;
+  }
 
-  return (
-    <div>
-        {
-            loading  ?  <p>Loading ...</p>
-
-            : (
-                <div className="p-2 ">
-                   ``
-                </div>
-            )
-        }
-    </div>
-  )
+  return <ProductDetails product={product} />;
 }

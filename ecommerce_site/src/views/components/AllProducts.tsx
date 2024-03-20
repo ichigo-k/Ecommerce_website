@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react'
+import {useEffect, useState} from 'react'
 import getData from '../../Functions/getData'
 import PopularProducts from "./PopularProducts"
 
@@ -28,11 +28,10 @@ export default function AllProducts() {
         <div>
             <div className="flex flex-wrap justify-around gap-y-3 p-2 ">
                 {
-                    Array(6).fill().map((_, i) => (
-                        <div key={i} className="bg-gray-500 w-[30%] max-xl:w-full animate-pulse  p-2 rounded-lg h-[10rem] lg:h-[10rem]">
-                            
-                        </div>
-                    ))
+                  Array(6).fill(undefined).map((_, i: number) => (
+                    <div key={i} className="bg-gray-500 w-[30%] max-xl:w-full animate-pulse p-2 rounded-lg h-[10rem] lg:h-[10rem]">
+                    </div>
+                  ))
                 }
             </div>
         </div>

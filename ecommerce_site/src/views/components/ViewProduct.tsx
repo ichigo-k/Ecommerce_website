@@ -1,6 +1,9 @@
-import React from 'react'
+interface ViewProductProps {
+  id: number;
+  style?: string;
+}
 
-export default function ViewProduct({id, style}):any {
+const ViewProduct: React.FC<ViewProductProps> = ({ id, style }) => {
   return (
     <a href={"/product/"+ id}>
     <button className={`w-full py-2 px-2  bg-black rounded-md ${style} `}>
@@ -9,3 +12,5 @@ export default function ViewProduct({id, style}):any {
     </a>
   )
 }
+
+export default ViewProduct;
