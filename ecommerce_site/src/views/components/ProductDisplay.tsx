@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function ProductDisplay({ products }: any) {
-    console.log(products);
     return (
         <>
             {products.map((product) => (

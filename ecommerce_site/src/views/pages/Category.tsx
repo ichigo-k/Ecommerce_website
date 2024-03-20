@@ -10,6 +10,8 @@ export default function Category() {
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
 
+
+
     useEffect(() => {
         getData({ url: "products/category/" + id  })
             .then((data) => {
@@ -30,7 +32,17 @@ export default function Category() {
         {
             loading 
             ?
-            <p>Loading ...</p>
+            <div>
+                <div className="flex flex-wrap justify-around gap-y-3 p-2 ">
+                    {
+                        Array(5).fill().map((_, i) => (
+                            <div key={i} className="bg-gray-500 w-full animate-pulse  p-2 rounded-lg h-[10rem] lg:h-[15rem] mb-3">
+                                
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
             : 
             <div className="flex flex-col justify-between p-2">
                <ProductDisplay products={product}  />

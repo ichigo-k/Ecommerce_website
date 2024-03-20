@@ -1,9 +1,9 @@
 
 export default function Navbar() {
 
-    let auth = false
+    let auth = true
   return (
-    <nav className='flex w-full items-center justify-between mt-3 '>
+    <nav className='flex w-full items-center justify-between mt-3 px-1'>
         <a href="/"> <h1 className="text-xl lg:text-2xl "><span>E</span>commerce</h1> </a>     
 
             <div>

@@ -1,9 +1,9 @@
 import React from 'react'
+import ViewProduct from './ViewProduct'
 
 export default function Highlight({thumbnail,category,brand,title, discountPercentage,price,id,stock}) {
-    console.log("image url:",thumbnail)
   return (
-    <div className="flex justify-evenly max-md:flex-col">
+    <div className="flex justify-evenly max-md:flex-col md:mt-1">
          <img src={thumbnail} alt="" className="w-1/3 h-[10rem] max-md:h-[5rem] max-md:w-full object-cover" />
 
 <div className="p-2 w-2/3 max-md:w-full flex flex-col justify-between ">
@@ -28,9 +28,7 @@ export default function Highlight({thumbnail,category,brand,title, discountPerce
         <span className="text-gray-500 line-through"> {price.toFixed(2)} </span>
         <span className=" bg-lime-600 text-white p-1 text-xs rounded-md ml-1">{discountPercentage.toFixed(1)}% off</span></p>
 
-        <a href={"/product/"+id }>
-        <button className="bg-black text-white w-full py-2 max-md:py-1 rounded-md mt-2">Add to Cart</button>
-        </a>
+        <ViewProduct id={id} style="mt-2  w-full bg-black text-white "/>
 
 </div>
     </div>
