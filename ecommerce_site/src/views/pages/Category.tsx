@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react'
+import {useEffect,useState} from 'react'
 import { useParams } from 'react-router-dom'
 import getData from '../../Functions/getData'
 import ProductDisplay from "../components/ProductDisplay"
@@ -7,7 +7,7 @@ export default function Category() {
 
     let {id} = useParams()
 
-    const [product, setProduct] = useState(null);
+    const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(true);
 
 
@@ -35,11 +35,9 @@ export default function Category() {
             <div>
                 <div className="flex flex-wrap justify-around gap-y-3 p-2 ">
                     {
-                        Array(5).fill().map((_, i) => (
-                            <div key={i} className="bg-gray-500 w-full animate-pulse  p-2 rounded-lg h-[10rem] lg:h-[15rem] mb-3">
-                                
-                            </div>
-                        ))
+                        Array.from({ length: 5 }).map((_, i) => (
+                            <div key={i} className="bg-gray-500 w-full animate-pulse p-2 rounded-lg h-[10rem] lg:h-[15rem] mb-3"></div>
+                          ))
                     }
                 </div>
             </div>

@@ -1,7 +1,7 @@
-import React from 'react'
+
 import ViewProduct from './ViewProduct'
 
-export default function Highlight({thumbnail,category,brand,title, discountPercentage,price,id,stock}) {
+export default function Highlight({thumbnail,category,brand,title, discountPercentage,price,id,stock}:any) {
   return (
     <div className="flex justify-evenly max-md:flex-col md:mt-1">
          <img src={thumbnail} alt="" className="w-1/3 h-[10rem] max-md:h-[5rem] max-md:w-full object-cover" />

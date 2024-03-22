@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import getData from '../../Functions/getData';
 import Highlight from './Highlight';
 
 export default function HighlightedProducts() {
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState<any>({});
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -28,11 +28,9 @@ export default function HighlightedProducts() {
              (
                 <div className="flex flex-wrap justify-around gap-y-3 ">
                     {
-                        Array(4).fill().map((_, i) => (
-                            <div key={i} className="bg-gray-500 w-[45%] animate-pulse  p-2 rounded-lg h-[15rem] lg:h-[12rem]">
-                                
-                            </div>
-                        ))
+                       Array.from({ length: 4 }).map((_, i) => (
+                        <div key={i} className="bg-gray-500 w-[45%] animate-pulse p-2 rounded-lg h-[15rem] lg:h-[12rem]"></div>
+                      ))
                     }
                 </div>
             ) : (
